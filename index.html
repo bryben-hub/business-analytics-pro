@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Analytics Pro - Mobile-First AI Analytics for Small Business</title>
+    <meta name="description" content="Business analytics that works as simply as your iPhone. AI-powered insights, real-time dashboards, and seamless integrations - all at a fraction of the cost.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .secondary-button {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            margin-left: 15px;
+        }
+        
+        .secondary-button:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #2d3748;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        /* Comparison Table */
+        .comparison {
+            padding: 80px 20px;
+        }
+        
+        .comparison h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+        
+        .comparison-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 50px;
+        }
+        
+        .comparison-table {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #f7fafc;
+        }
+        
+        .check {
+            color: #48bb78;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .cross {
+            color: #f56565;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .highlight {
+            background: #faf089;
+            font-weight: 600;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #2d3748;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .pricing-card.featured {
+            border: 3px solid #667eea;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+        
+        .price {
+            font-size: 3em;
+            font-weight: bold;
+            color: #667eea;
+            margin: 20px 0;
+        }
+        
+        .price small {
+            font-size: 0.4em;
+            color: #666;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .pricing-features li:before {
+            content: "✓ ";
+            color: #48bb78;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 20px;
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #2d3748;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #4a5568;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .testimonial-role {
+            color: #718096;
+            font-size: 0.9em;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        /* Email Form */
+        .email-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .email-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1em;
+        }
+        
+        .email-form button {
+            padding: 15px 40px;
+            background: #2d3748;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .email-form button:hover {
+            background: #1a202c;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            header p {
+                font-size: 1.1em;
+            }
+            
+            .cta-button {
+                display: block;
+                margin: 10px 0;
+            }
+            
+            .secondary-button {
+                margin-left: 0;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .email-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Business Analytics Pro</h1>
+            <p>Analytics that works as simply as your iPhone</p>
+            <p style="font-size: 1.1em; opacity: 0.9;">AI-powered insights • Real-time dashboards • Mobile-first design</p>
+            <div style="margin-top: 40px;">
+                <a href="#pricing" class="cta-button">Start Free Trial</a>
+                <a href="#demo" class="cta-button secondary-button">Watch Demo</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Everything You Need. Nothing You Don't.</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile-First Design</h3>
+                    <p>Run your business from your pocket. Beautifully designed for iPhone and mobile devices, not as an afterthought.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Insights</h3>
+                    <p>Ask questions in natural language. Get predictions, recommendations, and insights powered by advanced AI.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Zero Learning Curve</h3>
+                    <p>No training required. If you can use your phone, you can use Business Analytics Pro. Start in 5 minutes.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3>Seamless Integrations</h3>
+                    <p>Connect Stripe, QuickBooks, Shopify, Google Analytics, PayPal, and Square. Auto-sync every 15 minutes.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Honest Pricing</h3>
+                    <p>One price. Everything included. No hidden fees, no per-user charges, no surprise invoices.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Built for speed. Dashboards load instantly. Data syncs in real-time. No waiting, no loading screens.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison">
+        <div class="container">
+            <h2>How We Stack Up</h2>
+            <p class="comparison-subtitle">Why spend $100-500/month when you can get more for less?</p>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="highlight">Business Analytics Pro</th>
+                            <th>Datapad</th>
+                            <th>Klipfolio</th>
+                            <th>DashThis</th>
+                            <th>Geckoboard</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Starting Price</strong></td>
+                            <td class="highlight">$29/mo</td>
+                            <td>$21/mo</td>
+                            <td>$80/mo</td>
+                            <td>$49/mo</td>
+                            <td>$149/mo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mobile-First Design</strong></td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI Chat & Insights</strong></td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Predictive Forecasting</strong></td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>API Integrations</strong></td>
+                            <td class="highlight">6+ Major Platforms</td>
+                            <td>15 Sources</td>
+                            <td>130+ Sources</td>
+                            <td>34+ Sources</td>
+                            <td>80+ Sources</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Learning Curve</strong></td>
+                            <td class="highlight">5 minutes</td>
+                            <td>30 minutes</td>
+                            <td>2-3 weeks</td>
+                            <td>1-2 days</td>
+                            <td>1 week</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Team Collaboration</strong></td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Excel/PDF Export</strong></td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Custom Alerts</strong></td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Requires Coding</strong></td>
+                            <td class="highlight"><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$29<small>/month</small></div>
+                    <ul class="pricing-features">
+                        <li>1 User</li>
+                        <li>Basic Dashboards</li>
+                        <li>CSV Import/Export</li>
+                        <li>3 API Integrations</li>
+                        <li>Mobile Access</li>
+                        <li>Email Support</li>
+                    </ul>
+                    <a href="#" class="cta-button">Start Free Trial</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <h3>Professional</h3>
+                    <div class="price">$99<small>/month</small></div>
+                    <p style="color: #667eea; font-weight: 600; margin-bottom: 20px;">MOST POPULAR</p>
+                    <ul class="pricing-features">
+                        <li>5 Users</li>
+                        <li>AI-Powered Insights</li>
+                        <li>Predictive Forecasting</li>
+                        <li>6+ API Integrations</li>
+                        <li>Custom Alerts</li>
+                        <li>Team Collaboration</li>
+                        <li>Priority Support</li>
+                        <li>White-Label Option</li>
+                    </ul>
+                    <a href="#" class="cta-button">Start Free Trial</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <ul class="pricing-features">
+                        <li>Unlimited Users</li>
+                        <li>Custom Integrations</li>
+                        <li>Dedicated Account Manager</li>
+                        <li>SLA Guarantees</li>
+                        <li>On-premise Option</li>
+                        <li>Custom Training</li>
+                        <li>24/7 Phone Support</li>
+                    </ul>
+                    <a href="#" class="cta-button">Contact Sales</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 40px; color: #666;">
+                All plans include 14-day free trial. No credit card required.
+            </p>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Finally, analytics I can actually use on my phone! I check my numbers every morning while having coffee. Game changer for my e-commerce business."
+                    </div>
+                    <div class="testimonial-author">Sarah Johnson</div>
+                    <div class="testimonial-role">Founder, Organic Skincare Co.</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "We tried Tableau, too complex. Tried Klipfolio, too expensive. Business Analytics Pro is perfect - simple, affordable, and the AI insights are incredible."
+                    </div>
+                    <div class="testimonial-author">Mike Chen</div>
+                    <div class="testimonial-role">CEO, Tech Startup Inc.</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "The AI predictions have been 87% accurate. We use them for inventory planning now. Saved us $50K in the first quarter alone."
+                    </div>
+                    <div class="testimonial-author">Jennifer Martinez</div>
+                    <div class="testimonial-role">CFO, Retail Chain</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="demo" class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Join 500+ businesses making smarter decisions with real-time analytics</p>
+            <div class="email-form">
+                <input type="email" placeholder="Enter your email" id="emailInput">
+                <button onclick="handleSignup()">Start Free Trial</button>
+            </div>
+            <p style="margin-top: 20px; opacity: 0.9;">14-day free trial • No credit card required • Cancel anytime</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Business Analytics Pro. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="#" style="color: white; margin: 0 15px;">Privacy Policy</a>
+                <a href="#" style="color: white; margin: 0 15px;">Terms of Service</a>
+                <a href="#" style="color: white; margin: 0 15px;">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSignup() {
+            const email = document.getElementById('emailInput').value;
+            if (email && email.includes('@')) {
+                alert('Thanks for signing up! We\'ll send you an email to get started.');
+                // In production, this would call your backend API
+                console.log('Email submitted:', email);
+            } else {
+                alert('Please enter a valid email address');
+            }
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
